@@ -1,0 +1,166 @@
+﻿@page "/category/create"
+@page "/category/edit/{Id:int}"
+
+
+@inject ICategoryService _categoryService
+@inject IFileUploadService _fileUploadService
+@inject NavigationManager _navigationManager
+@inject IJSRuntime _jsRuntime
+@inject IFileUploadService _fileUploadService
+
+
+
+@if (Isloading)
+{
+	<div class="text-center">
+		<img src="images/Loading.gif" alt="loading_gif">
+	</div>
+}
+else
+{
+	<div class="container mt-3">
+		<div class="row">
+			<div class="col-6 text-success"> <h3>@(@Id ==0 ? "Create":"Update") Category </h3></div>
+			<div class="col-6 p-3"><NavLink href="category" class="btn btn-outline-secondary float-end"> Back To CategoryList</NavLink></div>
+			<div class="col-8 row">
+				<div class="col">
+					<EditForm Model="Category" OnValidSubmit="UpsertCategory">
+						<DataAnnotationsValidator />
+						<div class="form-group py-3">
+							<label>Name</label>
+							<InputText class="form-control" @bind-Value="Category.Name"></InputText>
+							<ValidationMessage For="()=>Category.Name"></ValidationMessage>
+						</div>
+						<div class="form-group py-3">
+							<label>Size</label>
+							<InputNumber class="form-control" @bind-Value="Category.Size"></InputNumber>
+							<ValidationMessage For="()=>Category.Size"></ValidationMessage>
+						</div>
+						<div class="form-group py-3">
+							<label>Description</label>
+							<TelerikEditor @bind-Value="@Category.Description"></TelerikEditor>
+							<ValidationMessage For="()=>Category.Description"></ValidationMessage>
+						</div>
+						<div class="form-group py-3">
+							<label>Description</label>
+							<InputFile OnChange="(args) => HandleImageUpload(args)" class="form-control"></InputFile>
+						</div>
+						<div class="form-group btn-group">
+							<button class="btn btn-primary">@Title</button>
+						</div>
+					</EditForm>
+				</div>
+			</div>
+			<div class="col-4 mt-5">
+				<img src="@Category.ImageUrl" alt="category-Image" class="rounded" style="max-width:100%;
+max-height:100%;">
+			</div>
+		</div>
+	</div>
+}
+@code {
+	//Initialize Parameter
+	[Parameter]
+	public int Id { get; set; }
+	public EventsCategory Category { get; set; } = new EventsCategory()
+		{
+			ImageUrl = "/images/DefaultImage.jpg"
+		};
+	public string Title { get; set; } = "Create";
+	public bool Isloading { get; set; }
+	public string oldImagePath { get; set; } 
+
+	/// <summary>
+	/// Handles Image Upload, Validates if Uploaded File is Image and calls FileUploadService.
+	/// Adds return ImagePath to category.ImageUrl
+	/// </summary>
+	private async Task HandleImageUpload(InputFileChangeEventArgs e)
+	{
+		try
+		{
+			if (e.GetMultipleFiles().Any())
+			{
+				foreach (var file in e.GetMultipleFiles())
+				{
+					EventsFileUpload UploadedFile;
+					FileInfo File = new FileInfo(file.Name);
+					var filesize = file.Size;
+					if (File.Extension.ToLower() == ".jpg"
+					|| File.Extension.ToLower() == ".png"
+					|| File.Extension.ToLower() == ".jpeg")
+					{
+
+						if(oldImagePath !=null && oldImagePath != "/images/DefaultImage.jpg") // Delete the Image if Uploaded again without saving
+						{
+							await _categoryService.DeleteImage(oldImagePath);
+						}
+						var filePath = await _fileUploadService.UploadFile(e.File);
+						if (filePath != null)
+						{
+							Category.ImageUrl = filePath;
+							oldImagePath = filePath;
+						}
+						else
+						{
+							await _jsRuntime.ToastrError("Error While Uploading Image");
+						}
+					}
+					else
+					{
+						await _jsRuntime.ToastrError("Please Upload .Jpg, .Png, .jpeg File");
+					}
+				}
+			}
+		}
+		catch (Exception ex)
+		{
+			await _jsRuntime.ToastrError(ex.Message);
+		}
+	}
+
+	/// <summary>
+	/// Load Category if it is an Update Opertaion on After Render Async
+	/// </summary>
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			if (Id == 0)
+			{
+				Isloading = false;
+			}
+			else
+			{
+				Title = "Update";
+				await LoadCategory();
+			}
+
+		}
+	}
+
+	public async Task LoadCategory()
+	{
+		Isloading = true;
+		StateHasChanged();
+		Category = await _categoryService.Get(Id);
+		oldImagePath = Category.ImageUrl;  
+		Isloading = false;
+		StateHasChanged();
+	}
+	private async Task UpsertCategory()
+	{
+
+		if (Id == 0)
+		{
+			await _categoryService.Create(Category);
+			await _jsRuntime.ToastrSuccess("Created Successfully");
+		}
+		else
+		{
+			Title = "Update";
+			await _categoryService.Update(Category, Category.Id);
+			await _jsRuntime.ToastrSuccess("Updated Successfully");
+		}
+		_navigationManager.NavigateTo("category");
+	}
+}

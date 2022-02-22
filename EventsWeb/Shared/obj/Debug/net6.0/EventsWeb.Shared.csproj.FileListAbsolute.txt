@@ -1,0 +1,17 @@
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\EventsWeb.Shared.deps.json
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\EventsWeb.Shared.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\ref\EventsWeb.Shared.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\EventsWeb.Shared.pdb
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.AssemblyInfoInputs.cache
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.AssemblyInfo.cs
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.csproj.CoreCompileInputs.cache
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\ref\EventsWeb.Shared.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.pdb
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\EventsWeb.Shared.runtimeconfig.json
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.genruntimeconfig.cache
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.csproj.AssemblyReference.cache
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\Events_Data.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\bin\Debug\net6.0\Events_Data.pdb
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Shared\obj\Debug\net6.0\EventsWeb.Shared.csproj.CopyComplete

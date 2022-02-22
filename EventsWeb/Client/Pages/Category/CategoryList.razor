@@ -1,0 +1,108 @@
+﻿@page "/category"
+@inject ICategoryService _categoryService
+@inject IJSRuntime _jsRunitme
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-6 text-success"> <h3>Event Categories</h3></div>
+		<div class="col-6 p-3"><NavLink href="category/create" class="btn btn-outline-success float-end"> Create</NavLink></div>
+		@if (Categories.Any())
+		{
+			<div class="col">
+				<table class="w-100 table table-dark table-striped">
+					<thead>
+						<tr >
+							<th>
+								Name
+							</th>
+							<th>
+								Size
+							</th>
+							<th style="width:40%;">
+								Description
+							</th>
+							<th>
+								Action
+							</th>
+						</tr>
+
+					</thead>
+					<tbody>
+						@foreach (var item in Categories)
+						{
+							<tr>
+								<td>
+									@item.Name
+								</td>
+								<td>
+									@item.Size
+								</td>
+								<td>
+									@((MarkupString)@item.Description)
+								</td>
+								<td>
+									<NavLink class="btn btn-primary" href=@($"category/edit/{item.Id}")>Edit</NavLink>
+									<button href="category/Delete" @onclick="()=>HandleDelete(item.Id,item)" class="btn btn-danger">Delete</button>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		}
+		else
+		{
+			@if (isLoading)
+			{
+				<div class="text-center">
+					<img src="images/Loading.gif" alt="loading_gif">
+				</div>
+			}
+			else
+			{
+				<p>No Records Found</p>
+			}
+
+		}
+
+	</div>
+</div>
+@code {
+	public IEnumerable<EventsCategory> Categories { get; set; } = new List<EventsCategory>();
+	public bool isLoading = true;
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			await LoadCategory();
+		}
+	}
+	public async Task LoadCategory()
+	{
+		Categories = await _categoryService.GetAll();
+		isLoading = false;
+		StateHasChanged();
+	}
+	private void HandleDelete(int id, EventsCategory eventsCategory)
+	{
+		 DeleteCategory(id , eventsCategory);
+
+	}
+	public async Task DeleteCategory(int id,EventsCategory eventsCategory)
+	{
+
+		var value = await _jsRunitme.ConfirmDelete();
+		if (value == true)
+		{
+			int num = await _categoryService.Delete(id);
+			if(num>0)
+			{
+				var ImageUrl = eventsCategory.ImageUrl;
+				await _jsRunitme.ToastrSuccess("Deleted Successfully");
+				await _categoryService.DeleteImage(ImageUrl);
+			}
+			await LoadCategory();
+		}
+
+	}
+
+}

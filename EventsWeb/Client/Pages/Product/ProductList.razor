@@ -1,0 +1,191 @@
+﻿@page "/product"
+
+@inject IJSRuntime _iJsRuntime
+@inject IProductService _productService
+@inject IJSRuntime _jsRunitme
+@inject ICategoryService _categoryService
+<div class="container mt-3">
+	<div class="row">
+		<div class="col-6 text-success"> <h3>Events</h3></div>
+		@if (Products.Any())
+		{
+
+			<div class="col-6 m-2">
+				<TelerikButton @onclick="SortByDate" Class="text-end"> Sort By Upcoming Events</TelerikButton>
+			</div>
+
+			@*ScrollMode="@GridScrollMode.Virtual"
+
+				RowHeight="60"*@
+
+			<div class="col-12 mt-2">
+				<TelerikGrid Data="Products"
+						 Resizable="true"
+						 Reorderable="true"
+						 Pageable="true"
+						 PageSize="10"
+						 Height="600px"
+						 Width="100%"
+						 ScrollMode="@GridScrollMode.Scrollable"
+						 @bind-Page=" CurrentPage"
+						 Sortable="true"
+						 @ref="ProductsGrid"
+						 FilterMode="@GridFilterMode.FilterMenu"
+						 EditMode="@GridEditMode.Inline"
+						 OnDelete="HandleDelete"
+						 OnUpdate="Upsert"
+						 OnCreate="Upsert"
+						 SelectionMode="GridSelectionMode.Multiple">
+					<GridToolBar>
+						<GridCommandButton Command="Add" Icon="add"> Add</GridCommandButton>
+						<GridCommandButton Command="ExcelExport" Icon="excel"> Export To Excel</GridCommandButton>
+					</GridToolBar>
+					<GridExport>
+						<GridExcelExport FileName="@("Books_"+ DateTime.Now.ToShortDateString())" AllPages="true"></GridExcelExport>
+					</GridExport>
+					<GridColumns>
+						@*	<GridCheckboxColumn SelectAllMode="GridSelectAllMode.All"></GridCheckboxColumn>*@
+						<GridColumn Field="@nameof(Product.Name)"></GridColumn>
+						<GridColumn Field="@nameof(Product.Organisedby)" Title="Organised By"></GridColumn>
+						<GridColumn Field="@nameof(Product.StartsAt)" Title="Starts At">
+							<Template>
+								@((context as EventsProduct).StartsAt.ToShortDateString())
+							</Template>
+						</GridColumn>
+						<GridColumn Field="@nameof(Product.EndsAt)" Title="Ends At">
+							<Template>
+								@((context as EventsProduct).EndsAt.ToShortDateString())
+							</Template>
+						</GridColumn>
+						<GridColumn Field="@nameof(Product.Location)" Title="Location"></GridColumn>
+						<GridColumn Field="@nameof(Product.Description)" Title="Description"></GridColumn>
+						<GridColumn Field="@nameof(Product.Price)" Title="Price">
+							<Template>
+								@((context as EventsProduct).Price.ToString("C2"));
+							</Template>
+						</GridColumn>
+						<GridColumn Field="@nameof(Product.Id)" Title="Category">
+							<Template>
+								@((context as EventsProduct).Category.Name)
+							</Template>
+							<EditorTemplate>
+								@{
+
+								<TelerikDropDownList Data="@Categories" TextField="Name" ValueField="Id" @bind-Value="@((context as EventsProduct).CategoryId)"></TelerikDropDownList>
+							}
+						</EditorTemplate>
+					</GridColumn>
+					<GridCommandColumn Title="Action">
+						<GridCommandButton Command="Save" Icon="save" ShowInEdit="true"> Save</GridCommandButton>
+						<GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true"> Cancel</GridCommandButton>
+						<GridCommandButton Command="Delete" Icon="delete"> Delete</GridCommandButton>
+						<GridCommandButton Command="Edit" Icon="edit"> Update</GridCommandButton>
+					</GridCommandColumn>
+				</GridColumns>
+
+			</TelerikGrid>
+		</div>
+		}
+		else
+		{
+			@if (isLoading)
+			{
+				<div class="text-center">
+					<img src="images/Loading.gif" alt="loading_gif">
+				</div>
+			}
+			else
+			{
+				<p>No Records Found</p>
+			}
+
+		}
+
+	</div>
+</div>
+@code {
+	//Parameter Initialize
+
+	public EventsProduct Product { get; set; }
+	public IEnumerable<EventsProduct> Products { get; set; } = new List<EventsProduct>();
+	public IEnumerable<EventsCategory> Categories { get; set; } = new List<EventsCategory>();
+	public bool isLoading = true;
+	public int CurrentPage { get; set; } = 1;
+	public TelerikGrid<EventsProduct> ProductsGrid { get; set; }
+
+	private async Task SortByDate()
+	{
+		SortDescriptor sortDescriptor = new();
+		sortDescriptor.Member = "StartsAt";
+		sortDescriptor.SortDirection = ListSortDirection.Descending;
+
+		List<SortDescriptor> sortDescriptors = new List<SortDescriptor>();
+		sortDescriptors.Add(sortDescriptor);
+
+		GridState<EventsProduct> gridState = new GridState<EventsProduct>();
+		gridState.SortDescriptors = sortDescriptors;
+
+		await ProductsGrid.SetState(gridState);
+	}
+	//private void OnPageChangedHandler(int currentIndex)
+	//{
+	//	CurrentPage = currentIndex;
+	//}
+
+	protected override async Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			//LoadProducts
+			await LoadProduct();
+		}
+	}
+	//Load and Set is Loading to false
+	public async Task LoadProduct()
+	{
+		Product = new EventsProduct();
+		Products = await _productService.GetAll();
+		Categories = await _categoryService.GetAll();
+		isLoading = false;
+		StateHasChanged();
+	}
+
+	private void HandleDelete(GridCommandEventArgs gridCommandEventArgs)
+	{
+		var book = gridCommandEventArgs.Item as EventsProduct;
+		//Delete Product
+		DeleteCategory(book.Id);
+
+	}
+	public async Task DeleteCategory(int id)
+	{
+		//Delete Implementation
+		var value = await _jsRunitme.ConfirmDelete();
+		if (value == true)
+		{
+			await _productService.Delete(id);
+			await _jsRunitme.ToastrSuccess("Deleted Successfully");
+			await LoadProduct();
+		}
+
+	}
+	public async Task Upsert(GridCommandEventArgs gridCommandEventArgs)
+	{
+		var product = gridCommandEventArgs.Item as EventsProduct;
+
+		if (product.Id == 0)
+		{
+			await _productService.Create(product);
+			await LoadProduct();
+			await _iJsRuntime.ToastrSuccess("Created Successfully");
+		}
+		else
+		{
+			//Title = "Update";
+			await _productService.Update(product, product.Id);
+			await LoadProduct();
+			await _iJsRuntime.ToastrSuccess("Updated Successfully");
+		}
+
+	}
+}
