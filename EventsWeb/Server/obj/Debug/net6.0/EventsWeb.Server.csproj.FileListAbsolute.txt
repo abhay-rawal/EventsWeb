@@ -90,3 +90,12 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Te
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Telerik.Zip.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Events_Data.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Events_Data.pdb
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\obj\Debug\net6.0\EventsWeb.Server.MvcApplicationPartsAssemblyInfo.cs
