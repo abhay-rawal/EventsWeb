@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OPr6CGnxmGdBZGP9z/aRAZn1gzdeKh9vnZ/vefgc11jHqoHCf96imNgm9+9uFAj/Nsc7cv78TwyTvZCy6nqEXg==",
+  "dgSpecHash": "7ZIxpjgRSmw8bhVEfsmNGGiMGY4kaPMezh+enbjsotbdaGyVQCUKlTh2+5Zsp/cgCiza8H12G1k1U2g1BSkuAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Client\\EventsWeb.Client.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,9 @@
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.2\\microsoft.aspnetcore.components.web.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.2\\microsoft.aspnetcore.components.webassembly.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\6.0.2\\microsoft.aspnetcore.components.webassembly.devserver.6.0.2.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.2\\microsoft.aspnetcore.cryptography.internal.6.0.2.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.2\\microsoft.aspnetcore.cryptography.keyderivation.6.0.2.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.2\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.2\\microsoft.aspnetcore.metadata.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
@@ -37,6 +40,8 @@
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.2\\microsoft.extensions.identity.core.6.0.2.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.2\\microsoft.extensions.identity.stores.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

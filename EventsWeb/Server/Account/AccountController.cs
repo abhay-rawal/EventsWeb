@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EventsWeb.Shared.Model;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventsWeb.Server.Account
@@ -21,9 +22,14 @@ namespace EventsWeb.Server.Account
             _signInManager = signInManager;
             _roleManager = roleManager;
         }
-
-        public IActionResult Index()
+        [HttpPost]
+        public async Task<IActionResult> SignUp([FromBody] EventsSignUpRequest signUpRequest)
         {
+            if(signUpRequest == null || !ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+           
             return View();
         }
     }
