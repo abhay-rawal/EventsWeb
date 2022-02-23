@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[11.0.0, )"
             },
+            "Blazored.LocalStorage": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
             "Microsoft.AspNetCore.Components.Authorization": {
               "target": "Package",
               "version": "[6.0.2, )"

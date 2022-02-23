@@ -100,3 +100,4 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Mi
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\obj\Debug\net6.0\EventsWeb.Server.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Server\bin\Debug\net6.0\Blazored.LocalStorage.dll

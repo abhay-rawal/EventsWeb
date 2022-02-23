@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "VvU9ns08ALloeJqB2k2u4I637VAk6Wfy7u1X2ym6C5jZqAN4BfMj1zzs9gcYaTxUhntW8L0EMfJWxFWAI1+UIQ==",
+  "dgSpecHash": "Nds4U6zS3Hhvozc0raItJOqJPljCXwsZYLhxs6fjro6UQEVYOziDoJDrbj5aeLsj7JFFhlzU5gzVpA/GHpLqSw==",
   "success": true,
   "projectFilePath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Client\\EventsWeb.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\blazored.localstorage\\4.2.0\\blazored.localstorage.4.2.0.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.2\\microsoft.aspnetcore.authorization.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.2\\microsoft.aspnetcore.components.6.0.2.nupkg.sha512",
