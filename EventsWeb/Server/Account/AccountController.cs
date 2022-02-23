@@ -1,7 +1,12 @@
-﻿using Events_Data;
+﻿using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using Events_Data;
 using EventsWeb.Shared.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EventsWeb.Server.Account
 {
@@ -12,16 +17,20 @@ namespace EventsWeb.Server.Account
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ApiSettings _apiSettings;
 
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager, 
-            RoleManager<IdentityRole> roleManager)
+            RoleManager<IdentityRole> roleManager,
+            IOptions<ApiSettings> apisettings)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _apiSettings = apisettings.Value;   
+                      
         }
         //For SignUp Request
         [HttpPost]
@@ -83,7 +92,7 @@ namespace EventsWeb.Server.Account
             //Check if it Succeded
             if (result.Succeeded)
             {
-                var user = _userManager.FindByIdAsync(signInRequest.UserName);
+                var user = await _userManager.FindByIdAsync(signInRequest.UserName);
                 if (user == null)
                 {
                     return Unauthorized(new EventsSignInResponse
@@ -93,9 +102,33 @@ namespace EventsWeb.Server.Account
                     });
 
                 }
-                //Todo: Remove
-                return Ok();
-                //Valid and need to login
+                //Get SigninCredentials 
+                var signInCredentials = GetSigningCredentials();
+                //Get Claims
+                var claims = await getClaims(user);
+                //Create TokenOptions or can Use TokenDesciptor
+
+                var tokenOptions = new JwtSecurityToken(
+                    issuer:_apiSettings.validIssuer,
+                    audience : _apiSettings.validAudience,
+                    claims : claims,
+                    expires : DateTime.UtcNow.AddDays(30),
+                    signingCredentials : signInCredentials);  
+                
+                var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+
+                return Ok(new EventsSignInResponse()
+                {
+                    IsAuthSuccessful = true,
+                    Token = token,
+                    UserDTO = new EventsUser
+                    {
+                        Id = user.Id,
+                        Email = user.Email,
+                        Name = user.Name,
+                        PhoneNumber = user.PhoneNumber
+                    }
+                }); 
             }
             else
             {
@@ -106,6 +139,28 @@ namespace EventsWeb.Server.Account
                 });
 
             }
+        }
+
+        private SigningCredentials GetSigningCredentials()
+        {
+            var secret = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_apiSettings.SecretKey));
+            return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
+        }
+
+        private async Task<List<Claim>> getClaims(ApplicationUser user)
+        {
+            List<Claim> claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.Name,user.Name),
+                new Claim(ClaimTypes.Email,user.Email), 
+                new Claim("Id",user.Id)
+            };
+            var roles = await _userManager.GetRolesAsync(await _userManager.FindByEmailAsync(user.Email));
+            foreach(var role in roles)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
+            return claims;
         }
     }
 }
