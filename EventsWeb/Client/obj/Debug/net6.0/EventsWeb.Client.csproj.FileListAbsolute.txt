@@ -973,3 +973,7 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\bu
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\0kKNeWPN.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\GfA3h5XP.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\R53mnWkw.gz
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\nmTkmsci.gz

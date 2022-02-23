@@ -51,10 +51,9 @@ namespace EventsWeb.Server.Account
 
             };
             //If roles are not created, Create Roles
-            if (!_roleManager.RoleExistsAsync("Admin").GetAwaiter().GetResult())
+            if (!_roleManager.RoleExistsAsync(StaticData.Role_User).GetAwaiter().GetResult())
             {
-                await _roleManager.CreateAsync(new IdentityRole(StaticData.Role_Admin));
-                await _roleManager.CreateAsync(new IdentityRole("User"));
+                await _roleManager.CreateAsync(new IdentityRole(StaticData.Role_User));
             }
             //Create User Inside Table
             var result = await _userManager.CreateAsync(User,signUpRequest.Password);
@@ -67,7 +66,7 @@ namespace EventsWeb.Server.Account
                 });
             }
             //Assign A role to user
-            var roleResult = await _userManager.AddToRoleAsync(User, "Admin");
+            var roleResult = await _userManager.AddToRoleAsync(User, StaticData.Role_User);
             //Check if the operation was succesful
             if (!roleResult.Succeeded)
             {
@@ -80,6 +79,8 @@ namespace EventsWeb.Server.Account
 
             return StatusCode(201);
         }
+
+        //SignIn
         [HttpPost]
         public async Task<IActionResult> SignIn([FromBody] EventsSignInRequest signInRequest)
         {
@@ -141,12 +142,13 @@ namespace EventsWeb.Server.Account
             }
         }
 
+        //Helper Method For SigningCredentials
         private SigningCredentials GetSigningCredentials()
         {
             var secret = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_apiSettings.SecretKey));
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
         }
-
+        //HelperMethod to generateClaims
         private async Task<List<Claim>> getClaims(ApplicationUser user)
         {
             List<Claim> claims = new List<Claim>

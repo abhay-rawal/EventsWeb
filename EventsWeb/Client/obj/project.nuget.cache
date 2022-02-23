@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7ZIxpjgRSmw8bhVEfsmNGGiMGY4kaPMezh+enbjsotbdaGyVQCUKlTh2+5Zsp/cgCiza8H12G1k1U2g1BSkuAg==",
+  "dgSpecHash": "VvU9ns08ALloeJqB2k2u4I637VAk6Wfy7u1X2ym6C5jZqAN4BfMj1zzs9gcYaTxUhntW8L0EMfJWxFWAI1+UIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Client\\EventsWeb.Client.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.2\\microsoft.aspnetcore.authorization.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.2\\microsoft.aspnetcore.components.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.2\\microsoft.aspnetcore.components.analyzers.6.0.2.nupkg.sha512",
+    "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\6.0.2\\microsoft.aspnetcore.components.authorization.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.2\\microsoft.aspnetcore.components.forms.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.2\\microsoft.aspnetcore.components.web.6.0.2.nupkg.sha512",
     "C:\\Users\\abhay.rawal\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.2\\microsoft.aspnetcore.components.webassembly.6.0.2.nupkg.sha512",

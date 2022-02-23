@@ -27,6 +27,29 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddDefaultTokenPro
 var apiSettingsSection = builder.Configuration.GetSection("ApiSettings");
 builder.Services.Configure<ApiSettings>(apiSettingsSection);
 
+//Fill ApiSetting class properties with AppSettings From the appsettings.Json 
+var apisettings = apiSettingsSection.Get<ApiSettings>();
+var key = Encoding.UTF8.GetBytes(apisettings.SecretKey);
+
+//Add JWTTokenAuthentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateAudience = true,
+        ValidateIssuer = true,
+    };
+
+});
+
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    .AddJwtBearer(Options => {
 //        Options.TokenValidationParameters = new TokenValidationParameters()
@@ -41,12 +64,10 @@ builder.Services.Configure<ApiSettings>(apiSettingsSection);
 
 
 //        };
-
-
 //    });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddScoped<ICategoryRepository,CategoryRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();

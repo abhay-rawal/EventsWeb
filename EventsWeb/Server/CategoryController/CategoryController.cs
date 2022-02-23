@@ -178,7 +178,7 @@ namespace EventsWeb.Server.CategoryController
                 });
             }
         }
-
+        //
         [Route("DeleteImage/{filepath}")]
         [HttpDelete]
         public async Task<IActionResult> Delete(string filepath)
