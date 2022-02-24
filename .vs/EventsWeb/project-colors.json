@@ -50,7 +50,12 @@
       "ProjectGuid": "919fd655-f067-4ba2-b932-d926e85dd6b4",
       "DisplayName": "Script Documents",
       "ColorIndex": 8
+    },
+    "2de49d1b-4421-42d1-9e46-67523f88bca4": {
+      "ProjectGuid": "2de49d1b-4421-42d1-9e46-67523f88bca4",
+      "DisplayName": "EventsWeb_ApplyMigrations",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }
