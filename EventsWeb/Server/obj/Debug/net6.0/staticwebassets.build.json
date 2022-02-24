@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E+OzHStRfVeS7D+5LobHA+57NpoZPmRHGHg9fC1MvGc=",
+  "Hash": "rZR0B0KRbXVZ27Mi1e+XbcXdsXk6ZLac2i+zlxcAKBs=",
   "Source": "EventsWeb.Server",
   "BasePath": "_content/EventsWeb.Server",
   "Mode": "Default",
@@ -8449,6 +8449,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\category\\b7cad0c2-5d66-4044-b70a-e2877fcbb800.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Server\\wwwroot\\images\\category\\ef2ddc67-6e0b-406a-a0aa-b2b556cb1a52.jpg",
+      "SourceId": "EventsWeb.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Server\\wwwroot\\",
+      "BasePath": "_content/EventsWeb.Server",
+      "RelativePath": "images/category/ef2ddc67-6e0b-406a-a0aa-b2b556cb1a52.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\category\\ef2ddc67-6e0b-406a-a0aa-b2b556cb1a52.jpg"
     },
     {
       "Identity": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Server\\wwwroot\\images\\DefaultImage.jpg",
