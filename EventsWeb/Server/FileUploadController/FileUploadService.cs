@@ -9,6 +9,11 @@ namespace EventsWeb.Server.FileUploadController
 		{
             _webHostEnvironment = webHostEnvironment;   
 		}
+        /// <summary>
+        ///     Uploads a file to server
+        /// </summary>
+        /// <param name="fileUpload">Contains a byte array of File</param>
+        /// <returns>Returns a file Path of the Uploaded File</returns>
 		public async Task<string> Create(EventsFileUpload fileUpload)
 		{
             var folderDirectory = $"{_webHostEnvironment.WebRootPath}\\images\\category";
@@ -24,6 +29,11 @@ namespace EventsWeb.Server.FileUploadController
             var fullPath = $"/images/category/{fileUpload.FileName}";
             return fullPath;    
         }
+
+        /// <summary>
+        /// Deletes a file if Path is Found
+        /// </summary>
+        /// <param name="Path"></param>
 
 		public async Task Delete(string Path)
 		{

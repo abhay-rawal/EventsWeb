@@ -67,8 +67,15 @@
 	</div>
 </div>
 @code {
+	//Initialize parameter
 	public IEnumerable<EventsCategory> Categories { get; set; } = new List<EventsCategory>();
 	public bool isLoading = true;
+
+	/// <summary>
+	///  Load Categories after first render has been completed. Using onInitialize waits for Category 
+	///  to load before render can be done, this freezes the page.
+	///  page until load
+	/// </summary>
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (firstRender)
@@ -76,17 +83,26 @@
 			await LoadCategory();
 		}
 	}
+
+	/// <summary>
+	///	Loads Category and changes the Isloading to false (Removes loading Gif From Page)
+	/// </summary>
 	public async Task LoadCategory()
 	{
 		Categories = await _categoryService.GetAll();
 		isLoading = false;
 		StateHasChanged();
 	}
+	
 	private void HandleDelete(int id, EventsCategory eventsCategory)
 	{
 		 DeleteCategory(id , eventsCategory);
 
 	}
+
+	/// <summary>
+	///	Delete Category
+	/// </summary>
 	public async Task DeleteCategory(int id,EventsCategory eventsCategory)
 	{
 
@@ -96,9 +112,12 @@
 			int num = await _categoryService.Delete(id);
 			if(num>0)
 			{
+				//Get Image Url
 				var ImageUrl = eventsCategory.ImageUrl;
-				await _jsRunitme.ToastrSuccess("Deleted Successfully");
+				//Delete Image
 				await _categoryService.DeleteImage(ImageUrl);
+				await _jsRunitme.ToastrSuccess("Deleted Successfully");
+				
 			}
 			await LoadCategory();
 		}

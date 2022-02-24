@@ -23,6 +23,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\EventsWeb_ApplyMigrations\EventsWeb_ApplyMigrations.csproj" />
 		<ProjectReference Include="..\..\Events_DataAccess\Events_Repository.csproj" />
 		<ProjectReference Include="..\Client\EventsWeb.Client.csproj" />
 		<ProjectReference Include="..\Shared\EventsWeb.Shared.csproj" />

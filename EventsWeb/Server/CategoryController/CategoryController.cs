@@ -19,6 +19,7 @@ namespace EventsWeb.Server.CategoryController
             _fileUploadService = fileUploadService;
         }
 
+        //Calls a service to Get all Categories
         [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -49,6 +50,7 @@ namespace EventsWeb.Server.CategoryController
             }
         }
 
+        //Calls a service to Get a category by Id
         [Route("Get/{categoryId}")]
         [HttpGet("categoryId")]
         public async Task<IActionResult> Get(int? categoryId)
@@ -92,7 +94,7 @@ namespace EventsWeb.Server.CategoryController
             }
         }
 
-
+        //Calls a service to Creates a new Category
         [HttpPost]
         public async Task<IActionResult> Create(EventsCategory category)
         {
@@ -122,7 +124,8 @@ namespace EventsWeb.Server.CategoryController
                 });
             }
         }
-      
+
+        //Calls a service to Updates Category by Id
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(EventsCategory category, int id)
         {
@@ -140,6 +143,8 @@ namespace EventsWeb.Server.CategoryController
                 });
             }
         }
+
+        //Calls a service to Deletes Category by Id
         [Route("{id}")]
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
@@ -178,7 +183,8 @@ namespace EventsWeb.Server.CategoryController
                 });
             }
         }
-        //
+
+        //Calls a service to Deletes Image associated with Image
         [Route("DeleteImage/{filepath}")]
         [HttpDelete]
         public async Task<IActionResult> Delete(string filepath)

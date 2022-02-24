@@ -10,7 +10,7 @@ namespace EventsWeb.Server.CategoryController
         {
             _categoryRepository = categoryRepository;
         }
-
+        
         public Task<EventsCategory> Create(EventsCategory objDTO)
         {
             return _categoryRepository.Create(objDTO);  

@@ -18,26 +18,6 @@ namespace EventsWeb.Client.FileUpload
 			_jsRuntime = jSRuntime;
 		
 		}
-
-		public async Task DeleteImage(string Path)
-		{
-			string[] fileNames = Path.Split('/');
-			string fileName = fileNames[fileNames.Length - 1];
-			//var fileUploadPath = new EventsFileUpload()
-			//{
-			//	FilePath = Path,
-			//};
-			var response = await _http.DeleteAsync($"api/FileUpload/{Path}");
-			if(response.IsSuccessStatusCode)
-			{
-				var comeHere = "";
-			}
-			else
-			{
-				var comeHere = "";
-			}
-		}
-
 		/// <summary> Creates a unique fileName, Converts file to a biteArray and call FileUpload Api</summary> 
 		/// <param name="file">Uploaded File</param>
 		/// <returns>Returns File path </returns>

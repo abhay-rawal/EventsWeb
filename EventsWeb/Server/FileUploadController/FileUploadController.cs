@@ -16,7 +16,7 @@ namespace EventsWeb.Server.CategoryController
         {
             _fileUploadService = fileUploadService;
         }
-
+        //Calls a service to Upload A file
         [HttpPost]
         public async Task<IActionResult> Create(EventsFileUpload fileUpload)
         {
@@ -34,7 +34,7 @@ namespace EventsWeb.Server.CategoryController
                 });
             }
         }
-
+        //Calls a service to Delete a file
         [HttpDelete("{filepath}")]
         public async Task<IActionResult> Delete(string filepath)
         {

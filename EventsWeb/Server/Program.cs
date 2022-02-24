@@ -7,6 +7,8 @@ using EventsWeb.Server;
 using EventsWeb.Server.CategoryController;
 using EventsWeb.Server.FileUploadController;
 using EventsWeb.Server.ProductController;
+using EventsWeb.Shared.Model;
+using EventsWeb_ApplyMigrations.DbMigrate;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
@@ -15,19 +17,21 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+//Add ApplicationDbContext to the container
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//For IDentity Server
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddDefaultTokenProviders()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
+//Populate Api settings Class with Api Settings from appsettings.JsonFile 
 var apiSettingsSection = builder.Configuration.GetSection("ApiSettings");
 builder.Services.Configure<ApiSettings>(apiSettingsSection);
 
-//Fill ApiSetting class properties with AppSettings From the appsettings.Json 
+//Get ApiSettings
 var apisettings = apiSettingsSection.Get<ApiSettings>();
 var key = Encoding.UTF8.GetBytes(apisettings.SecretKey);
 
@@ -50,28 +54,19 @@ builder.Services.AddAuthentication(options =>
 
 });
 
-//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-//    .AddJwtBearer(Options => {
-//        Options.TokenValidationParameters = new TokenValidationParameters()
-//        {
-//            ValidateIssuer = true,
-//            ValidateAudience = true,
-//            ValidateLifetime = true,
-//            ValidateIssuerSigningKey = true,
-//            ValidIssuer = builder.Configuration["jwtIssure"],
-//            ValidAudience = builder.Configuration["jwtAudience"],
-//            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwtSecurityKey"])),
-
-
-//        };
-//    });
-
+//AutoMapper
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+//Added Repository and Services to Container with Scoped LifeCycle
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+builder.Services.AddScoped<IDbMigration, DBMigration>();
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -93,6 +88,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+//Add SeedDatabse Method to PipeLine
+SeedDatabse();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -101,3 +99,18 @@ app.MapControllers();
 app.MapFallbackToFile("index.html");
 
 app.Run();
+
+/// <summary>
+/// Creates a scoped Service of IDbMigration and that Scoped Service can invoke the Db initialize.
+/// Add SeedDatabase inside the Pipeline, so it will be invoked when the application Starts
+/// </summary>
+/// 
+void SeedDatabse()
+{
+    using (var scope = app.Services.CreateScope())
+    {   // Create a new Instance of DbMigration
+        var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbMigration>();
+        //Invoke ApplyDbMigration
+        dbInitializer.ApplyDbMigration();
+    }
+}

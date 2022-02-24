@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 
-namespace EventsWeb.Client.AuthenticaitonStProvider
+namespace EventsWeb.Client.Authentication
 {
     public class AuthStateProvider : AuthenticationStateProvider
     {
@@ -20,6 +20,12 @@ namespace EventsWeb.Client.AuthenticaitonStProvider
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             var token = await _localStorage.GetItemAsync<string>(StaticData.Local_Token);
+            //Auth State Returns Null Claims Principal i.e. No Authentication
+            if(token == null)
+            {
+                return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
+            }
+            //If token is not null It returns Claims principal after prasing claims 
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity(JwtParser.ParseClaimsFromJwt(token),"jwtAuthType")));
         }

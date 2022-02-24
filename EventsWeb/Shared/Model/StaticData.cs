@@ -12,5 +12,6 @@ namespace EventsWeb.Shared.Model
         public const string Role_User = "User";
 
         public const string Local_Token = "JWT Token";
+        public const string Local_UserDetail = "UserDetails";
     }
 }

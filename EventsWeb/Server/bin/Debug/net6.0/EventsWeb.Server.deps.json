@@ -12,6 +12,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "11.0.0",
           "EventsWeb.Client": "1.0.0",
           "EventsWeb.Shared": "1.0.0",
+          "EventsWeb_ApplyMigrations": "1.0.0",
           "Events_Repository": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "6.0.2",
           "Microsoft.AspNetCore.Components.WebAssembly.Server": "6.0.2",
@@ -1040,6 +1041,14 @@
           "EventsWeb.Shared.dll": {}
         }
       },
+      "EventsWeb_ApplyMigrations/1.0.0": {
+        "dependencies": {
+          "Events_Repository": "1.0.0"
+        },
+        "runtime": {
+          "EventsWeb_ApplyMigrations.dll": {}
+        }
+      },
       "Events_Data/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.2"
@@ -1819,6 +1828,11 @@
       "sha512": ""
     },
     "EventsWeb.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EventsWeb_ApplyMigrations/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

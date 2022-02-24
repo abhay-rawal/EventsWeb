@@ -1535,6 +1535,19 @@
           "bin/placeholder/EventsWeb.Shared.dll": {}
         }
       },
+      "EventsWeb_ApplyMigrations/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Events_Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/EventsWeb_ApplyMigrations.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EventsWeb_ApplyMigrations.dll": {}
+        }
+      },
       "Events_Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -5214,6 +5227,11 @@
       "path": "../Shared/EventsWeb.Shared.csproj",
       "msbuildProject": "../Shared/EventsWeb.Shared.csproj"
     },
+    "EventsWeb_ApplyMigrations/1.0.0": {
+      "type": "project",
+      "path": "../../EventsWeb_ApplyMigrations/EventsWeb_ApplyMigrations.csproj",
+      "msbuildProject": "../../EventsWeb_ApplyMigrations/EventsWeb_ApplyMigrations.csproj"
+    },
     "Events_Data/1.0.0": {
       "type": "project",
       "path": "../../EventsWeb_Data/Events_Data.csproj",
@@ -5231,6 +5249,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "EventsWeb.Client >= 1.0.0",
       "EventsWeb.Shared >= 1.0.0",
+      "EventsWeb_ApplyMigrations >= 1.0.0",
       "Events_Repository >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.2",
       "Microsoft.AspNetCore.Components.WebAssembly.Server >= 6.0.2",
@@ -5279,6 +5298,9 @@
             },
             "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Shared\\EventsWeb.Shared.csproj": {
               "projectPath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb\\Shared\\EventsWeb.Shared.csproj"
+            },
+            "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb_ApplyMigrations\\EventsWeb_ApplyMigrations.csproj": {
+              "projectPath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\EventsWeb_ApplyMigrations\\EventsWeb_ApplyMigrations.csproj"
             },
             "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\Events_DataAccess\\Events_Repository.csproj": {
               "projectPath": "C:\\Users\\abhay.rawal\\Source\\Repos\\EventsWeb\\Events_DataAccess\\Events_Repository.csproj"

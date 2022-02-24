@@ -234,17 +234,17 @@
       "mscorlib.dll": "sha256-c1dVVfosFaf5aiS3brr2amBi1Ue0kg6mqECzmCbGyfA=",
       "netstandard.dll": "sha256-+9Yr\/gSP3tCZAMbOdAcGhHGuMcyg\/AaxVKtt3tGsvao=",
       "System.Private.CoreLib.dll": "sha256-SnxOe5QK250duVAQOw0iWr1sODhUuVEUykExQyQ\/WSk=",
-      "EventsWeb.Shared.dll": "sha256-dq\/Mnv82rAY9dKQOCur0RWSp5VVEWUP\/hIMdp4dVTeM=",
+      "EventsWeb.Shared.dll": "sha256-E8LTVMUbLQlKT3OtNpQWfJ02XCWw+ZW0jD3+5tmkc9k=",
       "Events_Data.dll": "sha256-Jz0nRWOD8TpNZ4SvwAIQYFhp\/gtuFGMz113ZdlfmOOI=",
-      "EventsWeb.Client.dll": "sha256-6wOdu15YdJNRAkByZtQ\/o7AghVFI20qUGdt\/\/owfFvI="
+      "EventsWeb.Client.dll": "sha256-qENok8HFeaa55X768YzNMYWgTtdea04QEutaYkCoH2o="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "EventsWeb.Shared.pdb": "sha256-d65hEnnrMaHJ5Pt814hyd0MERXWiV7QJpR49or77SHs=",
+      "EventsWeb.Shared.pdb": "sha256-D6dcdYzpKj0nPsoePgw2OfueuxtPTWrWT9EEeZctxfU=",
       "Events_Data.pdb": "sha256-8WD3n\/yTgNECqnKK8z\/d5bUo7MshzNSQX4FttadLh5I=",
-      "EventsWeb.Client.pdb": "sha256-kSo0uwioFPsi+AcZfc+hLcqFipCSUQoMYmh2kxr7Re0="
+      "EventsWeb.Client.pdb": "sha256-pC\/1So8Sks61PBAM+5fpWbnbjFlTZBeoQGzuicQ4HcQ="
     },
     "runtime": {
       "dotnet.6.0.2.lga01yt45e.js": "sha256-wbTVn69TU0+WI83iB+kky8tf\/BjZdYJeM0rUP96ur\/c=",
