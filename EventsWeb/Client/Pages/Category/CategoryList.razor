@@ -20,11 +20,11 @@
 							<th style="width:30%;">
 								Description
 							</th>
-							<th style="width:30%;">
-								Action
-							</th>
 							<th>
 								Image
+							</th>
+							<th>
+								Action
 							</th>
 						</tr>
 
@@ -43,7 +43,7 @@
 									@((MarkupString)@item.Description)
 								</td>
 								<td>
-									<img src="@item.ImageUrl" alt="category-Image" class="rounded" style="max-width:50%;max-height:50%;">
+									<img src="@item.ImageUrl" alt="category-Image" class="rounded" style="max-width:100px;max-height:100px;">
 								</td>
 								<td>
 									<NavLink class="btn btn-primary" href=@($"category/edit/{item.Id}")>Edit</NavLink>
