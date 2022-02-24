@@ -10,17 +10,17 @@
 			<div class="col">
 				<table class="w-100 table table-dark table-striped">
 					<thead>
-						<tr >
+						<tr>
 							<th>
 								Name
 							</th>
 							<th>
 								Size
 							</th>
-							<th style="width:40%;">
+							<th style="width:30%;">
 								Description
 							</th>
-							<th>
+							<th style="width:30%;">
 								Action
 							</th>
 							<th>
@@ -41,6 +41,9 @@
 								</td>
 								<td>
 									@((MarkupString)@item.Description)
+								</td>
+								<td>
+									<img src="@item.ImageUrl" alt="category-Image" class="rounded" style="max-width:50%;max-height:50%;">
 								</td>
 								<td>
 									<NavLink class="btn btn-primary" href=@($"category/edit/{item.Id}")>Edit</NavLink>
@@ -75,7 +78,7 @@
 	public bool isLoading = true;
 
 	/// <summary>
-	///  Load Categories after first render has been completed. Using onInitialize waits for Category 
+	///  Load Categories after first render has been completed. Using onInitialize waits for Category
 	///  to load before render can be done, this freezes the page.
 	///  page until load
 	/// </summary>
@@ -96,31 +99,31 @@
 		isLoading = false;
 		StateHasChanged();
 	}
-	
+
 	private void HandleDelete(int id, EventsCategory eventsCategory)
 	{
-		 DeleteCategory(id , eventsCategory);
+		DeleteCategory(id, eventsCategory);
 
 	}
 
 	/// <summary>
 	///	Delete Category
 	/// </summary>
-	public async Task DeleteCategory(int id,EventsCategory eventsCategory)
+	public async Task DeleteCategory(int id, EventsCategory eventsCategory)
 	{
 
 		var value = await _jsRunitme.ConfirmDelete();
 		if (value == true)
 		{
 			int num = await _categoryService.Delete(id);
-			if(num>0)
+			if (num > 0)
 			{
 				//Get Image Url
 				var ImageUrl = eventsCategory.ImageUrl;
 				//Delete Image
 				await _categoryService.DeleteImage(ImageUrl);
 				await _jsRunitme.ToastrSuccess("Deleted Successfully");
-				
+
 			}
 			await LoadCategory();
 		}

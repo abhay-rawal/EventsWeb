@@ -82,7 +82,20 @@ else
 	{
 		try
 		{
-			file = e.File;
+			FileInfo fileInfo = new FileInfo(e.File.Name);
+			if (validImageFormat.Contains(fileInfo.Extension.ToLower()))
+			{
+				if (oldImagePath != null && oldImagePath != "/images/DefaultImage.jpg")
+				{
+					await _categoryService.DeleteImage(oldImagePath);
+					oldImagePath = null;
+				}
+				file = e.File;
+			}
+			else
+			{
+				await _jsRuntime.ToastrError("Please Upload .Jpg, .Png, .jpeg File");
+			}
 		}
 		catch (Exception ex)
 		{
@@ -91,33 +104,17 @@ else
 	}
 	private async Task UploadFile()
 	{
-		FileInfo File = new FileInfo(file.Name);
-		var filesize = file.Size;
-
-		//Check if the Extension of the uploaded File is valid
-		if (validImageFormat.Contains(File.Extension.ToLower()))
+		var filePath = await _fileUploadService.UploadFile(file);
+		if (filePath != null)
 		{
-			/// Delete the Image if Uploaded again without saving Category
-			/// Also check if the image is Default Image
-			if (oldImagePath != null && oldImagePath != "/images/DefaultImage.jpg")
-			{
-				await _categoryService.DeleteImage(oldImagePath);
-			}
-			var filePath = await _fileUploadService.UploadFile(file);
-			if (filePath != null)
-			{
-				Category.ImageUrl = filePath;
-				oldImagePath = filePath;
-			}
-			else
-			{
-				await _jsRuntime.ToastrError("Error While Uploading Image");
-			}
+			Category.ImageUrl = filePath;
+			oldImagePath = filePath;
 		}
 		else
 		{
-			await _jsRuntime.ToastrError("Please Upload .Jpg, .Png, .jpeg File");
+			await _jsRuntime.ToastrError("Error While Uploading Image");
 		}
+
 	}
 	/// <summary>
 	///  Load Categories after first render has been completed. Using onInitialize waits for Category
@@ -161,15 +158,16 @@ else
 	{
 
 		if (Id == 0)
-		{	await UploadFile();
+		{
+			await UploadFile();
 			await _categoryService.Create(Category);
 			await _jsRuntime.ToastrSuccess("Created Successfully");
 		}
 		else
 		{
 			Title = "Update";
+			await UploadFile();
 			await _categoryService.Update(Category, Category.Id);
-			await _categoryService.Create(Category);
 			await _jsRuntime.ToastrSuccess("Updated Successfully");
 		}
 		_navigationManager.NavigateTo("category");
