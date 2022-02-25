@@ -9,17 +9,12 @@
     "assembly": {
       "AutoMapper.dll": "sha256-uNYyaL9rpjmA2uF9zP55k5t9afAfIQUk0oArKTAeAS0=",
       "AutoMapper.Extensions.Microsoft.DependencyInjection.dll": "sha256-o+ciZOc+lg+enKIuHnXAnocXep\/1rkNZ0wj+RhtAqyI=",
-      "Blazored.LocalStorage.dll": "sha256-6RRoYeDP3d0xabXmcCMF66wXeJlXVPem28Trs8sQiis=",
       "Humanizer.dll": "sha256-FemIqz6NhJAK6QVJ6zmarEUtVe3wEJ4G+hqbIn3f1MQ=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-1MwhDUDzh+JE9dgZxlgMF470nBqLsvGAAgAGfn3n8CI=",
       "Microsoft.AspNetCore.Components.dll": "sha256-R\/v7gKZiW9HyCdGNOk1GuOzLMyYC4OwMfwPH5+06KG4=",
-      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-dlKOS27Y6VWNumsP1+RpErwEZ0RGgierU\/QoiCS7Jck=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-Li4PRXFdOgU4EG7r\/STdKG8U2FJlMrY\/bxQhQsGwICw=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-0WGY9O6mBIfsbqEqVkudOQWESYqKRhaTioQk3Twqvdw=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-8Zk+1aqFk60UAGDm7pdqwLays3Lr2ICp6uJ3Z8MPCCE=",
-      "Microsoft.AspNetCore.Cryptography.Internal.dll": "sha256-03ZUcvm6iolq88duQpB\/pOjf8DHEQ7nqWcPCIElHjfA=",
-      "Microsoft.AspNetCore.Cryptography.KeyDerivation.dll": "sha256-PlLXKXuRNY5Hsz\/7R8RPe1SEKSJHjw5e7iCyBZILwWQ=",
-      "Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": "sha256-I+asgjFU19+rYaZpFGvEGkhIVk5eiVPkIhhEFqF4jNc=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-gnc+PVbmWP6vWXYgIbnhIyEll2ok6iKRa9wueeJF5lU=",
       "Microsoft.Data.SqlClient.dll": "sha256-q4aFqOhr12NvawbvhHceJHeT\/cyTd3CA3BCag+EthU8=",
       "Microsoft.EntityFrameworkCore.dll": "sha256-rkoXgOiwTfY\/9CgBvo+m8brwmC9n9Arip9PyRMtbwtI=",
@@ -39,8 +34,6 @@
       "Microsoft.Extensions.FileProviders.Abstractions.dll": "sha256-7PzvEcQvpK1c8tTX9VPI8AF+XrekqbAytNBQXJjvTvQ=",
       "Microsoft.Extensions.FileProviders.Physical.dll": "sha256-sXujvGMZDgBBZ9HqfcEq9XsM0pvwyhPt60NA9qLDzGI=",
       "Microsoft.Extensions.FileSystemGlobbing.dll": "sha256-viiXOG0fwhWobT0TQ1ZOJiZBdRvYRlWbDtjz+6d8sQI=",
-      "Microsoft.Extensions.Identity.Core.dll": "sha256-CT3PeS5lxqfMRhetZkIy+XTP5\/\/61fWqzx79hghqefc=",
-      "Microsoft.Extensions.Identity.Stores.dll": "sha256-TBG3gH5TF\/cqdoVW7xPL5iohv3S+AKdabHe\/78oPzNc=",
       "Microsoft.Extensions.Logging.dll": "sha256-GDZQCBtVHfrZZ6fL95lGoinLeUWLjQShLbfESwO7mrc=",
       "Microsoft.Extensions.Logging.Abstractions.dll": "sha256-1XXJ0VQ8pybOFNvf\/RA+k+pSfNRrsoMW2h9BItvFXVY=",
       "Microsoft.Extensions.Options.dll": "sha256-eGESyy9mRu8RcCGajAu4E8nxSmeB5nxiZkFPVaZ5Vl0=",
@@ -234,17 +227,17 @@
       "mscorlib.dll": "sha256-c1dVVfosFaf5aiS3brr2amBi1Ue0kg6mqECzmCbGyfA=",
       "netstandard.dll": "sha256-+9Yr\/gSP3tCZAMbOdAcGhHGuMcyg\/AaxVKtt3tGsvao=",
       "System.Private.CoreLib.dll": "sha256-SnxOe5QK250duVAQOw0iWr1sODhUuVEUykExQyQ\/WSk=",
-      "EventsWeb.Shared.dll": "sha256-E8LTVMUbLQlKT3OtNpQWfJ02XCWw+ZW0jD3+5tmkc9k=",
-      "Events_Data.dll": "sha256-Jz0nRWOD8TpNZ4SvwAIQYFhp\/gtuFGMz113ZdlfmOOI=",
-      "EventsWeb.Client.dll": "sha256-MXTFnt9FloDNR+PZMoY4wdxUHNQULV7tYKDe2Gcj6NQ="
+      "EventsWeb.Shared.dll": "sha256-Yvq1Wwh725NLMCuSigaqYKwD0aGzgQ8Vmf2ActCAmvI=",
+      "Events_Data.dll": "sha256-UpgkMrOZc91xpF+xJducHp9+Z+pDFBze9vV8bMld9Q0=",
+      "EventsWeb.Client.dll": "sha256-wWAosZbvdDdmeGiQIH0QfQ\/IMcTr8yUnSfnLDOgft9w="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "EventsWeb.Shared.pdb": "sha256-D6dcdYzpKj0nPsoePgw2OfueuxtPTWrWT9EEeZctxfU=",
-      "Events_Data.pdb": "sha256-8WD3n\/yTgNECqnKK8z\/d5bUo7MshzNSQX4FttadLh5I=",
-      "EventsWeb.Client.pdb": "sha256-pFdNPsxCRFFp+pb77VLsWp8ddTxPTm7yW6h8uHl5XFA="
+      "EventsWeb.Shared.pdb": "sha256-kl+Fla4AQwaAXseBssQ1aiS85R5Kc960LU5MlJKdCps=",
+      "Events_Data.pdb": "sha256-6nj6wScPs7mcbwCDK3WKvDxmgjm2jPZL6JzbkTlSPc0=",
+      "EventsWeb.Client.pdb": "sha256-y5hWZjVWYJ9hDnEaoxOOjgn8H\/6ycEPFtkY56EXuKX4="
     },
     "runtime": {
       "dotnet.6.0.2.lga01yt45e.js": "sha256-wbTVn69TU0+WI83iB+kky8tf\/BjZdYJeM0rUP96ur\/c=",

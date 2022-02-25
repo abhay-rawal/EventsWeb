@@ -2,7 +2,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.boot.json
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.webassembly.js
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.LocalStorage.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.2.lga01yt45e.js
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.timezones.blat
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.wasm
@@ -18,14 +17,10 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_EFIGS.dat
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_no_CJK.dat
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Web.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.WebAssembly.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Metadata.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.CSharp.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Data.SqlClient.dll
@@ -46,8 +41,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Identity.Core.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Logging.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Options.dll
@@ -247,7 +240,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.Sockets.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Telerik.Recurrence.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Diagnostics.Tracing.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.ValueTuple.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.Primitives.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Permissions.dll.gz
@@ -281,7 +273,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Text.Encoding.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Core.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.IdentityModel.JsonWebTokens.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.InteropServices.RuntimeInformation.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.WebSockets.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.dll.gz
@@ -293,7 +284,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.Pipes.AccessControl.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.HttpListener.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.Caching.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Cryptography.Internal.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Queryable.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.Linq.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.Pipelines.dll.gz
@@ -329,7 +319,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Reflection.TypeExtensions.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Parallel.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Identity.Core.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Expressions.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Private.Xml.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.ReaderWriter.dll.gz
@@ -378,10 +367,8 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.Watcher.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Collections.NonGeneric.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Threading.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Blazored.LocalStorage.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Xml.XDocument.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.Primitives.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.InteropServices.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.WebSockets.Client.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.dll.gz
@@ -416,7 +403,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\ww
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Globalization.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Numerics.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.Resources.ResourceManager.dll.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Identity.Stores.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.ServiceModel.Web.dll.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.EventBasedAsync.dll.gz
@@ -487,17 +473,12 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\re
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\EventsWeb.Client.pdb
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Blazored.LocalStorage.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Humanizer.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Authorization.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.WebAssembly.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -517,8 +498,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Mi
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
@@ -731,17 +710,12 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\Ev
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\EventsWeb.Client.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\dWb8i30l.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\QTq4dD5u.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\nfGDXKq6.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\TmTUNeqM.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\6t+OX3tt.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\EF5WAbpo.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\nmTkmsci.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\QBTDwwIX.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\T593DWNK.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\S8LqoNA7.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\Bgpo4f7U.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\agwheoOY.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\0kKNeWPN.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\EVK6+rBP.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\TsYnMbFD.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\1t0I2LMe.gz
@@ -761,8 +735,6 @@ C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\bu
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\hH5gKvmt.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\KozN8XHt.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\ryByUjjS.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\GfA3h5XP.gz
-C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\R53mnWkw.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\lrd0nJ4w.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\8F1jYW+3.gz
 C:\Users\abhay.rawal\Source\Repos\EventsWeb\EventsWeb\Client\obj\Debug\net6.0\build-gz\9X9wVL5g.gz
