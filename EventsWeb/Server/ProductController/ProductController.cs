@@ -15,6 +15,7 @@ namespace EventsWeb.Server.ProductController
             _productService = productService;
         }
 
+        //Calls a service to Get all Products
         [Route("GetAll")]
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -45,6 +46,7 @@ namespace EventsWeb.Server.ProductController
             }
         }
 
+        //Calls a service to Get a product by Id
         [Route("Get/{categoryId}")]
         [HttpGet("productId")]
         public async Task<IActionResult> Get(int? productId)
@@ -87,8 +89,7 @@ namespace EventsWeb.Server.ProductController
                 });
             }
         }
-
-
+        //Calls a service to Create a file 
         [HttpPost]
         public async Task<IActionResult> Create(EventsProduct product)
         {
@@ -118,6 +119,8 @@ namespace EventsWeb.Server.ProductController
                 });
             }
         }
+
+        //Calls a service to Delete a file by Id
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -155,6 +158,8 @@ namespace EventsWeb.Server.ProductController
                 });
             }
         }
+
+        //Calls a service to Update a file
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(EventsProduct product, int id)
         {

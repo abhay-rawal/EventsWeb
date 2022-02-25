@@ -14,10 +14,21 @@
 				<TelerikButton @onclick="SortByDate" Class="text-end"> Sort By Upcoming Events</TelerikButton>
 			</div>
 
-			@*ScrollMode="@GridScrollMode.Virtual"
-
-				RowHeight="60"*@
-
+			
+			<!--
+				1. To Resize the columns : Set Resizable attribute to true
+				2. To Reorder the column : Set Reordable attribute to true
+				3. For pagination		 : Pageable to true
+											i. PageSize			: Sets the no of rows for a page
+											ii. Height and Width: Sets the height and width of the page
+				4. ScrollMode			 : To Enable scroll in a table
+				5. To Sort the column	 : Set sortable to true 
+				6. For Filtering		 : This attribute enables the Filtering mode and has Options on how to filter
+				7. For EditMode			 : This attribute enables the Edit mode and has Options on how to filter
+				6. OnUpdate				 : Method to call when Updating an item
+				7. OnCreate				 : Method to call when Creating an item
+				8. OnDelete				 : Method to call when Deleting an item
+			-->
 			<div class="col-12 mt-2">
 				<TelerikGrid Data="Products"
 						 Resizable="true"
@@ -27,15 +38,13 @@
 						 Height="600px"
 						 Width="100%"
 						 ScrollMode="@GridScrollMode.Scrollable"
-						 @bind-Page=" CurrentPage"
 						 Sortable="true"
 						 @ref="ProductsGrid"
 						 FilterMode="@GridFilterMode.FilterMenu"
 						 EditMode="@GridEditMode.Inline"
 						 OnDelete="HandleDelete"
 						 OnUpdate="Upsert"
-						 OnCreate="Upsert"
-						 SelectionMode="GridSelectionMode.Multiple">
+						 OnCreate="Upsert">
 					<GridToolBar>
 						<GridCommandButton Command="Add" Icon="add"> Add</GridCommandButton>
 						<GridCommandButton Command="ExcelExport" Icon="excel"> Export To Excel</GridCommandButton>
@@ -44,7 +53,6 @@
 						<GridExcelExport FileName="@("Books_"+ DateTime.Now.ToShortDateString())" AllPages="true"></GridExcelExport>
 					</GridExport>
 					<GridColumns>
-						@*	<GridCheckboxColumn SelectAllMode="GridSelectAllMode.All"></GridCheckboxColumn>*@
 						<GridColumn Field="@nameof(Product.Name)"></GridColumn>
 						<GridColumn Field="@nameof(Product.Organisedby)" Title="Organised By"></GridColumn>
 						<GridColumn Field="@nameof(Product.StartsAt)" Title="Starts At">
@@ -104,34 +112,37 @@
 	</div>
 </div>
 @code {
+
 	//Parameter Initialize
 
 	public EventsProduct Product { get; set; }
 	public IEnumerable<EventsProduct> Products { get; set; } = new List<EventsProduct>();
 	public IEnumerable<EventsCategory> Categories { get; set; } = new List<EventsCategory>();
 	public bool isLoading = true;
-	public int CurrentPage { get; set; } = 1;
 	public TelerikGrid<EventsProduct> ProductsGrid { get; set; }
-
+	
+	/// <summary>
+	///		Sorts Starts At Column by Date
+	/// </summary>
 	private async Task SortByDate()
 	{
-		SortDescriptor sortDescriptor = new();
+		SortDescriptor sortDescriptor = new(); //Create a new Descriptor
 		sortDescriptor.Member = "StartsAt";
 		sortDescriptor.SortDirection = ListSortDirection.Descending;
 
-		List<SortDescriptor> sortDescriptors = new List<SortDescriptor>();
+		List<SortDescriptor> sortDescriptors = new List<SortDescriptor>(); //Add descriptor to list
 		sortDescriptors.Add(sortDescriptor);
 
 		GridState<EventsProduct> gridState = new GridState<EventsProduct>();
-		gridState.SortDescriptors = sortDescriptors;
+		gridState.SortDescriptors = sortDescriptors;                       
 
 		await ProductsGrid.SetState(gridState);
 	}
-	//private void OnPageChangedHandler(int currentIndex)
-	//{
-	//	CurrentPage = currentIndex;
-	//}
-
+	
+	/// <summary>
+	///  Load Products after first render has been completed. Using onInitialize waits for Product 
+	///  to load before render can be done, this freezes the page.
+	/// </summary>
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (firstRender)
@@ -140,7 +151,10 @@
 			await LoadProduct();
 		}
 	}
-	//Load and Set is Loading to false
+	
+	/// <summary>
+	///	Loads Product and changes the Isloading to false (Removes loading Gif From Page)
+	/// </summary>
 	public async Task LoadProduct()
 	{
 		Product = new EventsProduct();
@@ -149,17 +163,21 @@
 		isLoading = false;
 		StateHasChanged();
 	}
-
+	
+	/// <summary>
+	///	Delete Product
+	/// </summary>
 	private void HandleDelete(GridCommandEventArgs gridCommandEventArgs)
 	{
-		var book = gridCommandEventArgs.Item as EventsProduct;
+		var Product = gridCommandEventArgs.Item as EventsProduct;
 		//Delete Product
-		DeleteCategory(book.Id);
-
+		DeleteProduct(Product.Id);
 	}
-	public async Task DeleteCategory(int id)
+
+	//Delete Implementation
+	public async Task DeleteProduct(int id)
 	{
-		//Delete Implementation
+		
 		var value = await _jsRunitme.ConfirmDelete();
 		if (value == true)
 		{
@@ -167,8 +185,11 @@
 			await _jsRunitme.ToastrSuccess("Deleted Successfully");
 			await LoadProduct();
 		}
-
 	}
+
+	/// <summary>
+	/// Checks if the Id is 0 or More. If 0 create else Update Product
+	/// </summary>
 	public async Task Upsert(GridCommandEventArgs gridCommandEventArgs)
 	{
 		var product = gridCommandEventArgs.Item as EventsProduct;

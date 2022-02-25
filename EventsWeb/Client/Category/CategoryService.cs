@@ -19,7 +19,9 @@ namespace EventsWeb.Client.Category
             _jsRuntime = jsRuntime;
             _navManager = navManager;
         }
-
+        /// <summary>
+        ///   Calls an Api to Get Category By Id
+        /// </summary>
         public async Task<EventsCategory> Get(int id)
         {
             var response = await _http.GetAsync($"api/Category/Get/{id}");
@@ -39,6 +41,9 @@ namespace EventsWeb.Client.Category
             return new EventsCategory();
         }
 
+        /// <summary>
+        /// Calls an Api to  Get All categories
+        /// </summary>
         public async Task<IEnumerable<EventsCategory>> GetAll()
         {
 
@@ -61,6 +66,9 @@ namespace EventsWeb.Client.Category
             return new List<EventsCategory>();
         }
 
+        /// <summary>
+        ///    Calls an Api to  Create Category
+        /// </summary>
         public async Task Create(EventsCategory categoryDTO)
         {
             var response = await _http.PostAsJsonAsync($"api/Category", categoryDTO);
@@ -76,6 +84,10 @@ namespace EventsWeb.Client.Category
                 _navManager.NavigateTo("CategoryList");
             }
         }
+
+        /// <summary>
+        ///   Calls an Api to Update Category
+        /// </summary>
         public async Task Update(EventsCategory category, int id)
         {
             var response = await _http.PutAsJsonAsync($"api/Category/{id}", category);
@@ -91,6 +103,13 @@ namespace EventsWeb.Client.Category
                 _navManager.NavigateTo("CategoryList");
             }
         }
+
+        /// <summary>
+        ///   Calls an Api to Delete Category
+        /// </summary>
+        /// <returns>
+        ///     Returns a int that represent no of category Delted.
+        /// </returns>
         public async Task<int> Delete(int id)
         {
             var response = await _http.DeleteAsync($"api/Category/{id}");
@@ -107,6 +126,11 @@ namespace EventsWeb.Client.Category
                 return 0;
             }
         }
+
+        /// <summary>
+        /// Calls an Api to Delete Image associated with category
+        /// </summary>
+        /// <param name="filePath"></param>
         public async Task DeleteImage(string filePath)
         {
             string[] fileNames = filePath.Split('/');

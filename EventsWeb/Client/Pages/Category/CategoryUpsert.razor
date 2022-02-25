@@ -51,10 +51,6 @@ else
 					</EditForm>
 				</div>
 			</div>
-			<div class="col-4 mt-5">
-				<img src="@Category.ImageUrl" alt="category-Image" class="rounded" style="max-width:100%;
-max-height:100%;">
-			</div>
 		</div>
 	</div>
 }
@@ -64,11 +60,19 @@ max-height:100%;">
 	public int Id { get; set; }
 	public EventsCategory Category { get; set; } = new EventsCategory()
 		{
-			ImageUrl = "/images/DefaultImage.jpg"
+			ImageUrl = "/images/DefaultImage.jpg" //Set default URL to default image
 		};
 	public string Title { get; set; } = "Create";
 	public bool Isloading { get; set; }
-	public string oldImagePath { get; set; } 
+	public string oldImagePath { get; set; }
+	public List<String> validImageFormat { get; set; } = new List<string>
+	{
+		".jpg",
+		".png",
+		".jpeg",
+		".jpg"
+	};
+	IBrowserFile? file;
 
 	/// <summary>
 	/// Handles Image Upload, Validates if Uploaded File is Image and calls FileUploadService.
@@ -78,38 +82,19 @@ max-height:100%;">
 	{
 		try
 		{
-			if (e.GetMultipleFiles().Any())
+			FileInfo fileInfo = new FileInfo(e.File.Name);
+			if (validImageFormat.Contains(fileInfo.Extension.ToLower()))
 			{
-				foreach (var file in e.GetMultipleFiles())
+				if (oldImagePath != null && oldImagePath != "/images/DefaultImage.jpg")
 				{
-					EventsFileUpload UploadedFile;
-					FileInfo File = new FileInfo(file.Name);
-					var filesize = file.Size;
-					if (File.Extension.ToLower() == ".jpg"
-					|| File.Extension.ToLower() == ".png"
-					|| File.Extension.ToLower() == ".jpeg")
-					{
-
-						if(oldImagePath !=null && oldImagePath != "/images/DefaultImage.jpg") // Delete the Image if Uploaded again without saving
-						{
-							await _categoryService.DeleteImage(oldImagePath);
-						}
-						var filePath = await _fileUploadService.UploadFile(e.File);
-						if (filePath != null)
-						{
-							Category.ImageUrl = filePath;
-							oldImagePath = filePath;
-						}
-						else
-						{
-							await _jsRuntime.ToastrError("Error While Uploading Image");
-						}
-					}
-					else
-					{
-						await _jsRuntime.ToastrError("Please Upload .Jpg, .Png, .jpeg File");
-					}
+					await _categoryService.DeleteImage(oldImagePath);
+					oldImagePath = null;
 				}
+				file = e.File;
+			}
+			else
+			{
+				await _jsRuntime.ToastrError("Please Upload .Jpg, .Png, .jpeg File");
 			}
 		}
 		catch (Exception ex)
@@ -117,9 +102,24 @@ max-height:100%;">
 			await _jsRuntime.ToastrError(ex.Message);
 		}
 	}
+	private async Task UploadFile()
+	{
+		var filePath = await _fileUploadService.UploadFile(file);
+		if (filePath != null)
+		{
+			Category.ImageUrl = filePath;
+			oldImagePath = filePath;
+		}
+		else
+		{
+			await _jsRuntime.ToastrError("Error While Uploading Image");
+		}
 
+	}
 	/// <summary>
-	/// Load Category if it is an Update Opertaion on After Render Async
+	///  Load Categories after first render has been completed. Using onInitialize waits for Category
+	///  to load before render can be done, this freezes the page.
+	///  page until load
 	/// </summary>
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
@@ -138,26 +138,35 @@ max-height:100%;">
 		}
 	}
 
+	/// <summary>
+	/// Loads Category and changes the Isloading to false (Removes loading Gif From Page)
+	/// </summary>
+
 	public async Task LoadCategory()
 	{
 		Isloading = true;
 		StateHasChanged();
 		Category = await _categoryService.Get(Id);
-		oldImagePath = Category.ImageUrl;  
+		oldImagePath = Category.ImageUrl;
 		Isloading = false;
 		StateHasChanged();
 	}
+	/// <summary>
+	/// Checks if the Id is 0 or More. If 0 create else Update Category
+	/// </summary>
 	private async Task UpsertCategory()
 	{
 
 		if (Id == 0)
 		{
+			await UploadFile();
 			await _categoryService.Create(Category);
 			await _jsRuntime.ToastrSuccess("Created Successfully");
 		}
 		else
 		{
 			Title = "Update";
+			await UploadFile();
 			await _categoryService.Update(Category, Category.Id);
 			await _jsRuntime.ToastrSuccess("Updated Successfully");
 		}

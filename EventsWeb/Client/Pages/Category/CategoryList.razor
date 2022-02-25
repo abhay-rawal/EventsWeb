@@ -10,15 +10,18 @@
 			<div class="col">
 				<table class="w-100 table table-dark table-striped">
 					<thead>
-						<tr >
-							<th>
+						<tr>
+							<th>                         
 								Name
 							</th>
 							<th>
 								Size
 							</th>
-							<th style="width:40%;">
+							<th style="width:30%;">
 								Description
+							</th>
+							<th>
+								Image
 							</th>
 							<th>
 								Action
@@ -38,6 +41,9 @@
 								</td>
 								<td>
 									@((MarkupString)@item.Description)
+								</td>
+								<td>
+									<img src="@item.ImageUrl" alt="category-Image" class="rounded" style="max-width:100px;max-height:100px;">
 								</td>
 								<td>
 									<NavLink class="btn btn-primary" href=@($"category/edit/{item.Id}")>Edit</NavLink>
@@ -67,8 +73,15 @@
 	</div>
 </div>
 @code {
+	//Initialize parameter
 	public IEnumerable<EventsCategory> Categories { get; set; } = new List<EventsCategory>();
 	public bool isLoading = true;
+
+	/// <summary>
+	///  Load Categories after first render has been completed. Using onInitialize waits for Category
+	///  to load before render can be done, this freezes the page.
+	///  page until load
+	/// </summary>
 	protected override async Task OnAfterRenderAsync(bool firstRender)
 	{
 		if (firstRender)
@@ -76,29 +89,41 @@
 			await LoadCategory();
 		}
 	}
+
+	/// <summary>
+	///	Loads Category and changes the Isloading to false (Removes loading Gif From Page)
+	/// </summary>
 	public async Task LoadCategory()
 	{
 		Categories = await _categoryService.GetAll();
 		isLoading = false;
 		StateHasChanged();
 	}
+
 	private void HandleDelete(int id, EventsCategory eventsCategory)
 	{
-		 DeleteCategory(id , eventsCategory);
+		DeleteCategory(id, eventsCategory);
 
 	}
-	public async Task DeleteCategory(int id,EventsCategory eventsCategory)
+
+	/// <summary>
+	///	Delete Category
+	/// </summary>
+	public async Task DeleteCategory(int id, EventsCategory eventsCategory)
 	{
 
 		var value = await _jsRunitme.ConfirmDelete();
 		if (value == true)
 		{
 			int num = await _categoryService.Delete(id);
-			if(num>0)
+			if (num > 0)
 			{
+				//Get Image Url
 				var ImageUrl = eventsCategory.ImageUrl;
-				await _jsRunitme.ToastrSuccess("Deleted Successfully");
+				//Delete Image
 				await _categoryService.DeleteImage(ImageUrl);
+				await _jsRunitme.ToastrSuccess("Deleted Successfully");
+
 			}
 			await LoadCategory();
 		}
