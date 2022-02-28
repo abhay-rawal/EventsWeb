@@ -97,18 +97,17 @@ app.UseAuthorization();
 app.MapRazorPages();
 app.MapControllers();
 app.MapFallbackToFile("index.html");
-
+ 
 app.Run();
 
 /// <summary>
 /// Creates a scoped Service of IDbMigration and that Scoped Service can invoke the Db initialize.
-/// Add SeedDatabase inside the Pipeline, so it will be invoked when the application Starts
 /// </summary>
-/// 
 void SeedDatabse()
 {
     using (var scope = app.Services.CreateScope())
-    {   // Create a new Instance of DbMigration
+
+    {   // Gets IDbMigration From Service Container
         var dbInitializer = scope.ServiceProvider.GetRequiredService<IDbMigration>();
         //Invoke ApplyDbMigration
         dbInitializer.ApplyDbMigration();

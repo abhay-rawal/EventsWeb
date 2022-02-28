@@ -20,10 +20,11 @@ namespace EventsWeb_ApplyMigrations.DbMigrate
         ///</summary>
         public void ApplyDbMigration()
         {
-            var pendingMigration =  _dbContext.Database.GetPendingMigrations();
+            var pendingMigration =  _dbContext.Database.GetPendingMigrations(); //Gets all the Pending Migration
+            
             if(pendingMigration.Any())
             {
-                 _dbContext.Database.Migrate();
+                 _dbContext.Database.Migrate(); //Apply Migration to Db
             }
         }
     }
