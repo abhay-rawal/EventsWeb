@@ -8,4 +8,5 @@ namespace EventsWeb.Client.Authentication
         Task<EventsSignInResponse> Login(EventsSignInRequest signOutRequest);
         Task Logout();
     }
+   
 }

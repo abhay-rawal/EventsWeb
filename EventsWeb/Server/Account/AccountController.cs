@@ -55,6 +55,7 @@ namespace EventsWeb.Server.Account
             {
                 await _roleManager.CreateAsync(new IdentityRole(StaticData.Role_User));
             }
+
             //Create User Inside Table
             var result = await _userManager.CreateAsync(User,signUpRequest.Password);
             if (!result.Succeeded)
@@ -93,7 +94,7 @@ namespace EventsWeb.Server.Account
             //Check if it Succeded
             if (result.Succeeded)
             {
-                var user = await _userManager.FindByIdAsync(signInRequest.UserName);
+                var user = await _userManager.FindByEmailAsync(signInRequest.UserName);
                 if (user == null)
                 {
                     return Unauthorized(new EventsSignInResponse
@@ -103,14 +104,14 @@ namespace EventsWeb.Server.Account
                     });
 
                 }
-                //Get SigninCredentials 
+                //Get SigninCredentials (Needed For creating a JWTSecurityToken)
                 var signInCredentials = GetSigningCredentials();
                 //Get Claims
                 var claims = await getClaims(user);
-                //Create TokenOptions or can Use TokenDesciptor
+                //Create TokenOptions or can Use TokenDesciptor ( Needed For creating a JWTSecurityToken)
 
                 var tokenOptions = new JwtSecurityToken(
-                    issuer:_apiSettings.validIssuer,
+                    issuer: _apiSettings.validIssuer,
                     audience : _apiSettings.validAudience,
                     claims : claims,
                     expires : DateTime.UtcNow.AddDays(30),

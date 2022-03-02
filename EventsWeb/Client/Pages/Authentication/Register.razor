@@ -1,0 +1,57 @@
+﻿@page "/register"
+
+
+<EditForm Model="SignupRequest" OnValidSubmit="RegisterUser" class="pt-4 ">
+	<DataAnnotationsValidator />
+	<div class="py-4">
+		<div class=" row form-group ">
+			<div class="col-6 offset-3 ">
+				<div class="card  border border-2 border-success">
+					<div class="card-body px-lg-5 pt-4">
+						<h3 class="col-12 text-success text-center py-2">
+							<strong>Sign Up</strong>
+						</h3>
+						@if(ShowRegistrationErrors)
+						{
+							foreach (var item in Erros)
+							{
+								<p class="text-danger text-center">@item</p>
+							}
+						}
+						<div class="py-2">
+							<InputText @bind-Value="SignupRequest.Name" class="form-control" placeholder="Name..." />
+							<ValidationMessage For="(() => SignupRequest.Name)" />
+						</div>
+						<div class="py-2">
+							<InputText @bind-Value="SignupRequest.Email" class="form-control" placeholder="Email..." />
+							<ValidationMessage For="(() => SignupRequest.Email)" />
+						</div>
+						<div class="py-2 input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"> +977</span>
+							</div>
+							<InputText @bind-Value="SignupRequest.PhoneNumber" class="form-control" placeholder="Phone number..." />
+							<ValidationMessage For="(() => SignupRequest.PhoneNumber)" />
+						</div>
+						<div class="form-row py-2">
+							<div class="col">
+								<InputText @bind-Value="SignupRequest.Password" id="password" type="password" placeholder="Password..." class="form-control" />
+								<ValidationMessage For="(() => SignupRequest.Password)" />
+							</div>
+							<div class="col py-2">
+								<InputText @bind-Value="SignupRequest.ConfirmPassword" id="confirm" type="password" class="form-control" placeholder="Confirm Password..." />
+								<ValidationMessage For="(() => SignupRequest.ConfirmPassword)" />
+							</div>
+						</div>
+						<hr style="background-color:aliceblue" />
+						<div class="py-2">
+							<button type="submit" class="btn btn-success btn-block"><i class="bi bi-person-plus-fill"></i> Register</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</EditForm>
+
+

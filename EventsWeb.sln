@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events_Repository", "Events
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events_Data", "EventsWeb_Data\Events_Data.csproj", "{2CD0A575-ED85-4114-A8C2-B87FED78E667}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsWeb_ApplyMigrations", "EventsWeb_ApplyMigrations\EventsWeb_ApplyMigrations.csproj", "{2DE49D1B-4421-42D1-9E46-67523F88BCA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventsWeb_ApplyMigrations", "EventsWeb_ApplyMigrations\EventsWeb_ApplyMigrations.csproj", "{2DE49D1B-4421-42D1-9E46-67523F88BCA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
